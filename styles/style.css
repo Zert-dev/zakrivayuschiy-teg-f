@@ -33,7 +33,7 @@
   align-items: center;
   background-color: var(--main-color);
   border: var(--border);
-  block-size: clamp(327px, calc(312.563px + 3.85vw), 368px);
+  min-block-size: clamp(327px, calc(312.563px + 3.85vw), 368px);
 }
 
 .header-title {
@@ -79,6 +79,7 @@
 .card-image {
   position: relative;
   border-block-end: var(--border);
+  aspect-ratio: 1/1;
 }
 
 .hue-rotate {
@@ -285,7 +286,6 @@
 }
 
 @media (width > 375px) {
-
     .main{
     gap: var(--offset-ll);
   }
@@ -293,4 +293,4 @@
   .card-text{
     margin: 20px 22px;
   }
-} 
+}
