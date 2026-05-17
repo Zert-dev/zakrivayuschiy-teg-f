@@ -1,13 +1,11 @@
-/* Здесь вы напишете основную часть стилей страницы.
-
-Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
+/* этот скрипт использует такие имена классов:
 ✦ like-icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
 ✦ button__text — для обозначения текстового элемента внутри кнопки
-
+Если эти классы поменять в HTML, скрипт перестанет работать. Будьте аккуратны.
 */
 
 .page {
@@ -16,7 +14,7 @@
   justify-content: center;
   align-items: center;
   font-family: var(--main-font), sans-serif;
-  font-variation-settings: 'wght' var(--regular-wght);
+  font-variation-settings: 'wght' var(--regular);
   margin-block-start: var(--offset-xl);
   gap: var(--offset-xl);
   background-image: var(--main-gradient);
@@ -28,7 +26,7 @@
   inline-size: clamp(375px, calc(260.563px + 30.516vw), 700px);
 }
 
-/*СЕКЦИЯ header*/
+/*Секция header*/
 .header {
   display: flex;
   justify-content: center;
@@ -48,15 +46,15 @@
   gap: var(--offset-s);
 }
 
-.header-big-title {
+.header-main-title {
   font-size: var(--title-size);
 }
 
 .header-small-title {
-  font-size: var(--subtitle-size);
+  font-size: var(--small-size-title);
 }
 
-/*секция main*/
+/*Секция main*/
 .main {
   display: flex;
   flex-direction: column;
@@ -65,21 +63,20 @@
   gap: var(--offset-l);
 }
 
-/*styles card*/
+/*card style*/
 .card {
   background-color: var(--main-color);
   border: var(--border);
 }
 
-.card__title {
+.card-title {
   font-size: var(--main-font-size);
-  font-variation-settings: 'wght' var(--bold-wght);
-  padding-inline: var(--offset-xs);
-  padding-block: var(--offset-xxs);
+  font-variation-settings: 'wght' var(--bold);
+  padding: 5px 10px 4px 10px;
   border-block-end: var(--border);
 }
 
-.card__image {
+.card-image {
   position: relative;
   border-block-end: var(--border);
 }
@@ -112,7 +109,7 @@
   filter: blur(2px);
 }
 
-.card__image-label {
+.card-image-label {
   position: absolute;
   inset-inline-end: 25px;
   inset-block-start: 25px;
@@ -123,13 +120,14 @@
   opacity: 50%;
 }
 
-.card__text {
+.card-text {
   display: flex;
   flex-direction: column;
   gap: var(--offset-sm);
   margin: var(--offset-sm);
   font-size: var(--main-font-size);
-  font-variation-settings: 'wght' var(--regular-wght);
+  font-variation-settings: 'wght' var(--regular);
+  line-height: 21px;
 }
 
 .card__icon-button {
@@ -151,7 +149,7 @@
   display: flex;
   align-items: center;
   justify-content: end;
-  gap: 12px;
+  gap: 4px;
   margin-inline-end: var(--offset-sm);
   margin-block: var(--offset-sm);
 }
@@ -162,9 +160,8 @@
   padding-block: 7px;
 }
 
-/*styles button*/
 .save__button {
-  margin-block-end: var(--offset-l);
+  margin-block-end: var(--offset-xl);
 }
 
 .button {
@@ -176,7 +173,6 @@
   user-select: none;
 }
 
-/*button effects*/
 .button:hover {
   cursor: pointer;
 }
@@ -218,27 +214,27 @@
   padding: 15px 17px;
 }
 
-/*СЕКЦИЯ disketET*/
 .disket {
   position: relative;
   mix-blend-mode: difference;
 }
 
-.insert-disket {
+.insert-disket[open] {
   inline-size: clamp(341px, calc(336.775px + 1.127vw), 353px);
   padding: 28px;
+  border: var(--border) ;
 }
 
-.insert-disket .button__text {
+.insert-disket[open] .button__text {
   text-transform: uppercase;
 }
 
-.insert-disket::backdrop {
+.insert-disket[open]::backdrop {
   background-color: var(--accent-color);
   opacity: 75%;
 }
 
-.insert-disket__content {
+.insert-disket[open] .insert-disket__content {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -246,22 +242,22 @@
   gap: var(--offset-sl);
 }
 
-.insert-disket__content-text {
+.insert-disket[open] .insert-disket__content-text {
   display: flex;
   align-items: center;
   gap: var(--offset-s);
 }
 
-.insert-disket__content-text .disket {
+.insert-disket[open] .insert-disket__content-text .disket {
   min-inline-size: 39px;
   min-block-size: 39px;
 }
 
-.insert-disket__content-text .button__text {
+.insert-disket[open] .insert-disket__content-text .button__text {
   line-height: 150%;
 }
 
-.insert-disket__close-button {
+.insert-disket[open] .insert-disket__close-button {
   background-color: transparent;
   border: var(--border);
   padding-block: var(--offset-xs);
@@ -269,7 +265,7 @@
 }
 
 @supports ((text-stroke: 1px var(--main-color)) or (--webkit-text-stroke: 1px var(--main-color))) {
-  .card__image-label {
+  .card-image-label {
     -webkit-text-stroke: 1px var(--main-color);
     text-stroke: 1px var(--main-color);
     text-shadow: none;
@@ -285,4 +281,16 @@
     min-inline-size: 29px;
     min-block-size: 29px;
   }
+
 }
+
+@media (width > 375px) {
+
+    .main{
+    gap: var(--offset-ll);
+  }
+
+  .card-text{
+    margin: 20px 22px;
+  }
+} 

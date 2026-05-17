@@ -1,17 +1,16 @@
-/* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --main-font: 'Inter';
-  --accent-font: 'PressStart2P';
+  --main-font: 'Inter' , sans-serif;
+  --accent-font: 'PressStart2P', monospace;
   --title-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-  --subtitle-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  --small-size-title: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   --main-font-size: 18px;
   --accent-font-size: 14px;
   --main-color: #fff;
   --accent-color: #000;
   --contour-color: #000;
   --animation-fill-color: #ff0000;
-  --regular-wght: 410;
-  --bold-wght: 715;
+  --regular: 410;
+  --bold: 715;
   --text-stroke: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
   --main-gradient:
     repeating-linear-gradient(
@@ -30,8 +29,8 @@
     ),
     repeating-linear-gradient(
       180deg,
-     rgba(231, 231, 231),
-     rgba(26, 26, 26)
+      rgba(231, 231, 231),
+      rgba(26, 26, 26)
     );
   --border: 2px solid #000;
   --offset-xxs: 4px;
@@ -39,6 +38,7 @@
   --offset-s: 20px;
   --offset-sm: 25px;
   --offset-sl: 30px;
-  --offset-l: 50px;
+  --offset-l: 47px;
+  --offset-ll: 49px;
   --offset-xl: 100px;
 }
