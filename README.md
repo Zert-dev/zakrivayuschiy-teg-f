@@ -1,1 +1,1 @@
-https://github.com/Zert-dev/zakrivayuschiy-teg-f#
+https://github.com/Zert-dev/zakrivayuschiy-teg-f
