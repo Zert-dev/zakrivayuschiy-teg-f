@@ -79,6 +79,9 @@
 .card-image {
   position: relative;
   border-block-end: var(--border);
+}
+
+.image-in-card{
   aspect-ratio: 1/1;
 }
 
